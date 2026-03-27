@@ -43,12 +43,15 @@ Der folgende PAP beschreibt das Programm, das du implementieren sollst:
 
 ```mermaid
 flowchart TD
-    A([🟢 START]) --> B[/Eingabe: Name/]
-    B --> C[/Eingabe: Gewicht in kg\nals Text einlesen/]
+    A([🟢 START]) --> A2[/Ausgabe: Bitte Namen eingeben!/]
+    A2 --> B[/Eingabe: Name/]
+    B --> B2[/Ausgabe: Bitte Gewicht in kg eingeben!/]
+    B2 --> C[/Eingabe: Gewicht in kg\nals Text einlesen/]
     C --> D{TryParse\nerfolgreich?}
     D -- Nein --> E[/Ausgabe: Fehler –\nUngültige Eingabe/]
     E --> F([🔴 ENDE])
-    D -- Ja --> G[/Eingabe: Größe in m\nals Text einlesen/]
+    D -- Ja --> D2[/Ausgabe: Bitte Größe in meter eingeben!/]
+    D2 --> G[/Eingabe: Größe in m\nals Text einlesen/]
     G --> H{TryParse\nerfolgreich?}
     H -- Nein --> E
     H -- Ja --> I{Größe > 0?}
@@ -67,6 +70,7 @@ flowchart TD
     Q --> S
     R --> S
     S --> F
+  
 ```
 
 ---
